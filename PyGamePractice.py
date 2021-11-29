@@ -45,3 +45,21 @@ pygame.draw.ellipse(windowSurface, RED, (300, 250, 40, 80), 1)
 
 # Draw text background rectangle onto surface. 
 pygame.draw.rect(windowSurface, RED, (textRect.left - 20, textRect.top - 20, textRect.width + 40, textRect.height +40))
+
+# Get a pixel array of the surface. 
+pixArray = pygame.PixelArray(windowSurface)
+pixArray[480][380] = BLACK
+del pixArray
+
+# Draw the text onto the surface. 
+windowSurface.blit(text, textRect)
+
+# Draw the window onto the screen. 
+pygame.display.update()
+
+# Run the game loop. 
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
