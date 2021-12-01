@@ -27,5 +27,9 @@ textRect = text.get_rect()
 textRect.centerx = windowSurface.get_rect().centerx
 textRect.centery = windowSurface.get_rect().centery
 
+# Draw the game background. 
+windowSurface.fill(PUKEGREEN)
+
+
 
 
