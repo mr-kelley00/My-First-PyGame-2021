@@ -31,7 +31,7 @@ textRect.centery = windowSurface.get_rect().centery
 windowSurface.fill(PUKEGREEN)
 
 # Draw a polygon on the screen. 
-pygame.draw.polygon(windowSurface, PUKEGREEN, ((146,0), (291,106), (236,277), (56,277), (0, 106)))
+pygame.draw.polygon(windowSurface, GREEN, ((146,0), (291,106), (236,277), (56,277), (0, 106)))
 
 # Draw lines on the screen. 
 pygame.draw.line(windowSurface, RED, (60,60), (120,60), 4)
@@ -43,3 +43,24 @@ pygame.draw.circle(windowSurface, BLACK, (300, 50), 20, 0)
 
 # Draw an ellipse. 
 pygame.draw.ellipse(windowSurface, RED, (300, 250, 40, 80), 1)
+
+# Draw the text rectangle. 
+pygame.draw.rect(windowSurface, RED, (textRect.left - 20, textRect.top - 20, textRect.width + 40, textRect.height + 40))
+
+# Create Pixel Array
+pixArray = pygame.PixelArray(windowSurface)
+pixArray[480][380] = BLUE 
+del pixArray
+
+# Draw the text onto the surface. 
+windowSurface.blit(text, textRect)
+
+# Update Pygame Display 
+pygame.display.update()
+
+# Run game loop. 
+while True: 
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
