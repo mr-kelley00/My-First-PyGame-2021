@@ -74,5 +74,10 @@ while True:
                 player.top = random.randint(0, WINDOWHEIGHT - player.height)
                 player.left = random.randint(0, WINDOWWIDTH - player.width)
 
+       
+
+
+        
+
 
 
