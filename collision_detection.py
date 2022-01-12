@@ -1,4 +1,4 @@
-# PyGame Collision Detection Practice, Ryan Kelley, January 12, 2022, 10:57am, v1.1a-BUGFIX
+# PyGame Collision Detection Practice, Ryan Kelley, January 12, 2022, 10:57am, v1.1
 
 import pygame, sys, random
 from pygame.locals import * 
