@@ -79,8 +79,8 @@ while True:
             # The box has moved past the right. 
             if b['dir'] == DOWNRIGHT:
                 b['dir'] = DOWNLEFT
-            if b['dir'] == UPRIGHT: # Should be UPLEFT
-                b['dir'] = UPLEFT # Should be UPRIGHT 
+            if b['dir'] == UPRIGHT: 
+                b['dir'] = UPLEFT 
 
         # Draw the box onto the game surface. 
         pygame.draw.rect(windowSurface, b['color'], b['rect'])
