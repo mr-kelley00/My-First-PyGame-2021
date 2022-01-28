@@ -26,7 +26,7 @@ player = pygame.Rect(300, 100, 50, 50)
 foods = []
 
 for i in range(20):
-    foods.append(pygame.Rect(random.randint(0, WINDOWWIDTH - FOODSIZE), random.randint(0, WINDOWHEIGHT - FOODSIZE), FOODSIZE, FOODSIZE))
+    foods.append(pygame.Rct(random.randint(0, WINDOWWIDTH - FOODSIZE), random.randint(0, WINDOWHEIGHT - FOODSIZE), FOODSIZE, FOODSIZE))
 
 # Movement Variables 
 moveLeft = False
