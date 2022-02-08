@@ -23,6 +23,7 @@ WHITE = (255, 255, 255) # Only need white since we will use image files now.
 foodCounter = 0 
 NEWFOOD = 40
 FOODSIZE = 20
+foodImage = pygame.image.load('img/cherry.png') # NEW
 
 # Setup the player data structures.  NEW 
 player = pygame.Rect(300, 100, 40, 40) # Changed from (300, 100, 50, 50)
@@ -43,8 +44,8 @@ moveDown = False
 MOVESPEED = 6
 
 # Set up the music. All new. 
-pickUpSound = pygame.mixer.Sound('pickup.wav')
-pygame.mixer.music.load('background.mid')
+pickUpSound = pygame.mixer.Sound('sfx/pickup.wav')
+pygame.mixer.music.load('sfx/background.mid')
 pygame.mixer.music.play(-1, 0.0)
 musicPlaying = True
 
@@ -133,8 +134,11 @@ while True:
                 pickUpSound.play()
 
     # Draw the food. 
-    for i in range(len(foods)): 
-        pygame.draw.rect(windowSurface, GREEN, foods[i])
+    # for i in range(len(foods)): 
+    #    pygame.draw.rect(windowSurface, GREEN, foods[i])
+
+    for food in foods: 
+        windowSurface.blit(foodImage, food)
 
     # Draw the window to the screen. 
     pygame.display.update() 
