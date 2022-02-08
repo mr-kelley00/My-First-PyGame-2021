@@ -85,6 +85,12 @@ while True:
             if event.key == K_x: # Use x to teleport the player.  
                 player.top = random.randint(0, WINDOWHEIGHT - player.height)
                 player.left = random.randint(0, WINDOWWIDTH - player.width)
+            # Turn off the music. 
+            if event.key == K_m: 
+                if musicPlaying:
+                    pygame.mixer.music.stop()
+                else:
+                    pygame.mixer.music.play(-1, 0.0)
 
         if event.type == MOUSEBUTTONUP: 
             foods.append(pygame.Rect(event.pos[0], event.pos[1], FOODSIZE, FOODSIZE))         
