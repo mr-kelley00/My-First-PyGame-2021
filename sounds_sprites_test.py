@@ -1,4 +1,4 @@
-# PyGame Collision Detection Practice, Ryan Kelley, January 13, 2022, 09:57am, v2.0
+# PyGame Sounds and Sprites Practice, Ryan Kelley, February 08, 2022, 2:14PM, v0.0
 
 import pygame, sys, random
 from pygame.locals import * 
@@ -11,22 +11,28 @@ mainClock = pygame.time.Clock()
 WINDOWWIDTH = 400
 WINDOWHEIGHT = 400 
 windowSurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT), 0, 32)
-pygame.display.set_caption('Collision Detection 2022')
+pygame.display.set_caption('Sprites and Sounds 2022') # Changed 
+
 
 # Setup colors. 
-BLACK = (0, 0, 0)
-GREEN = (0, 255, 0)
-WHITE = (255, 255, 255)
+# BLACK = (0, 0, 0)
+# GREEN = (0, 255, 0)
+WHITE = (255, 255, 255) # Only need white since we will use image files now. 
 
-# Setup the player and food data structures. 
+# Setup the food data structures. 
 foodCounter = 0 
 NEWFOOD = 40
 FOODSIZE = 20
-player = pygame.Rect(300, 100, 50, 50)
+
+# Setup the player data structures.  NEW 
+player = pygame.Rect(300, 100, 40, 40) # Changed from (300, 100, 50, 50)
+playerImage = pygame.image.load('img/player.png') # NEW 
+playerStretchedImage = pygame.transform.scale(playerImage, (40, 40)) # NEW
+
 foods = []
 
 for i in range(20):
-    foods.append(pygame.Rct(random.randint(0, WINDOWWIDTH - FOODSIZE), random.randint(0, WINDOWHEIGHT - FOODSIZE), FOODSIZE, FOODSIZE))
+    foods.append(pygame.Rect(random.randint(0, WINDOWWIDTH - FOODSIZE), random.randint(0, WINDOWHEIGHT - FOODSIZE), FOODSIZE, FOODSIZE))
 
 # Movement Variables 
 moveLeft = False
@@ -35,6 +41,12 @@ moveUp = False
 moveDown = False 
 
 MOVESPEED = 6
+
+# Set up the music. All new. 
+pickUpSound = pygame.mixer.Sound('pickup.wav')
+pygame.mixer.music.load('background.mid')
+pygame.mixer.music.play(-1, 0.0)
+musicPlaying = True
 
 # Run the game loop. 
 while True: 
