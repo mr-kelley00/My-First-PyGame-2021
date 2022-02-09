@@ -1,4 +1,4 @@
-# PyGame Sprites and Sounds, Ryan Kelley, February 08, 2022, 10:49pm, v2.3
+# PyGame Sprites and Sounds, Ryan Kelley, February 08, 2022, 10:55pm, v2.4
 
 import pygame, sys, random
 from pygame.locals import * 
@@ -39,8 +39,13 @@ moveLeft = False
 moveRight = False
 moveUp = False
 moveDown = False 
-
 MOVESPEED = 6
+
+# Music Information 
+pickUpSound = pygame.mixer.Sound('sfx/pickup.wav')
+pygame.mixer.music.load('sfx/background.mid')
+pygame.mixer.music.play(-1, 0.0)
+musicPlaying = True 
 
 # Run the game loop. 
 while True: 
