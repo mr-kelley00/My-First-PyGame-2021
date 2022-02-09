@@ -1,4 +1,4 @@
-# PyGame Sprites and Sounds, Ryan Kelley, February 08, 2022, 11:12pm, v2.5
+# PyGame Sprites and Sounds, Ryan Kelley, February 08, 2022, 11:21pm, v2.6
 
 import pygame, sys, random
 from pygame.locals import * 
@@ -117,13 +117,22 @@ while True:
         player.right += MOVESPEED
     
     # Draw the player on the surface. 
-    pygame.draw.rect(windowSurface, BLACK, player)
+    # pygame.draw.rect(windowSurface, BLACK, player)
+
+    # Draw the player image on the surface. 
+    windowSurface.blit(playerStretchedImage, player)
 
     # Check for player colliding with food(s). 
     for food in foods[:]:
         if player.colliderect(food):
             foods.remove(food)
-
+            # Increase player image size each time cherry is picked up. 
+            player = pygame.Rect(player.left, player.top, player.width + 2, player.height +2)
+            playerStretchedImage = pygame.transform.scale(playerImage, (player.width, player.height))
+            if musicPlaying: 
+                pickUpSound.play()
+    
+    
     # Draw the food. 
     for i in range(len(foods)): 
         pygame.draw.rect(windowSurface, GREEN, foods[i])
