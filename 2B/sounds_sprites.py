@@ -1,4 +1,4 @@
-# PyGame Sprites and Sounds, Ryan Kelley, February 08, 2022, 10:39pm, v2.1
+# PyGame Sprites and Sounds, Ryan Kelley, February 08, 2022, 10:39pm, v2.2
 
 import pygame, sys, random
 from pygame.locals import * 
@@ -11,17 +11,20 @@ mainClock = pygame.time.Clock()
 WINDOWWIDTH = 400
 WINDOWHEIGHT = 400 
 windowSurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT), 0, 32)
-pygame.display.set_caption('Collision Detection 2022')
+pygame.display.set_caption('Sounds and Sprites 2022')
 
 # Setup colors. 
-BLACK = (0, 0, 0)
-GREEN = (0, 255, 0)
+# BLACK = (0, 0, 0) 
+# GREEN = (0, 255, 0)
 WHITE = (255, 255, 255)
 
 # Setup the player and food data structures. 
 foodCounter = 0 
 NEWFOOD = 40
 FOODSIZE = 20
+foodImage = pygame.image.load('img/cherry.png')
+
+
 player = pygame.Rect(300, 100, 50, 50)
 foods = []
 
