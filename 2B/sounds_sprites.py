@@ -1,4 +1,4 @@
-# PyGame Sprites and Sounds, Ryan Kelley, February 08, 2022, 11:21pm, v2.6
+# PyGame Sprites and Sounds, Ryan Kelley, February 08, 2022, 11:30pm, v2.99
 
 import pygame, sys, random
 from pygame.locals import * 
@@ -134,9 +134,14 @@ while True:
     
     
     # Draw the food. 
-    for i in range(len(foods)): 
-        pygame.draw.rect(windowSurface, GREEN, foods[i])
+    # for i in range(len(foods)): 
+    #    pygame.draw.rect(windowSurface, GREEN, foods[i])
 
+
+    for food in foods: # For each food in our list of foods, do the following 
+        windowSurface.blit(foodImage, food)
+
+    
     # Draw the window to the screen. 
     pygame.display.update() 
     mainClock.tick(40)    
