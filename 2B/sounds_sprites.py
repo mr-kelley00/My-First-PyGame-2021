@@ -1,4 +1,4 @@
-# PyGame Collision Detection Practice, Ryan Kelley, January 13, 2022, 09:57am, v2.0
+# PyGame Sprites and Sounds, Ryan Kelley, February 08, 2022, 10:39pm, v2.1
 
 import pygame, sys, random
 from pygame.locals import * 
