@@ -86,7 +86,7 @@ while True:
             if event.key == K_x: # Use x to teleport the player.  
                 player.top = random.randint(0, WINDOWHEIGHT - player.height)
                 player.left = random.randint(0, WINDOWWIDTH - player.width)
-            # Turn off the music. 
+            # Turn on/off music. 
             if event.key == K_m: 
                 if musicPlaying:
                     pygame.mixer.music.stop()
