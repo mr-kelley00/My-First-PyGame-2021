@@ -1,4 +1,4 @@
-# PyGame Sprites and Sounds, Ryan Kelley, February 08, 2022, 10:39pm, v2.2
+# PyGame Sprites and Sounds, Ryan Kelley, February 08, 2022, 10:49pm, v2.3
 
 import pygame, sys, random
 from pygame.locals import * 
@@ -23,13 +23,16 @@ foodCounter = 0
 NEWFOOD = 40
 FOODSIZE = 20
 foodImage = pygame.image.load('img/cherry.png')
-
-
-player = pygame.Rect(300, 100, 50, 50)
 foods = []
-
 for i in range(20):
     foods.append(pygame.Rect(random.randint(0, WINDOWWIDTH - FOODSIZE), random.randint(0, WINDOWHEIGHT - FOODSIZE), FOODSIZE, FOODSIZE))
+
+
+# Player Information 
+player = pygame.Rect(300, 100, 40, 40)
+playerImage = pygame.image.load('img/player.png')
+playerStretchedImage = pygame.transform.scale(playerImage, (40, 40))
+
 
 # Movement Variables 
 moveLeft = False
